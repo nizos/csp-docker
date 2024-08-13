@@ -1,0 +1,10 @@
+services:
+  nginx:
+    image: csp-docker
+    build: .
+    container_name: csp-container
+    ports:
+      - "8080:80"
+    volumes:
+      - ./site:/usr/share/nginx/html/
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
